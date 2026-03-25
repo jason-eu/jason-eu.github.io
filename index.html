@@ -33,7 +33,7 @@
                 font-weight: bold;
             }
 
-            /* Custom Modal width (55% of visible area) */
+            /* Custom Modal, in this case a pop-up, with a width a visible area of 55% of viewing area */
             .modal-55 {
                 max-width: 55vw;
             }
@@ -352,13 +352,13 @@
             toggleBtn.addEventListener('click', () => {
                 if (htmlElement.getAttribute('data-bs-theme') === 'light') {
                     htmlElement.setAttribute('data-bs-theme', 'dark');
-                    toggleBtn.innerHTML = "☀️ Mode Clair";
+                    toggleBtn.innerHTML = "☀️ Mode  Jour";
                     toggleBtn
                         .classList
                         .replace('btn-outline-light', 'btn-outline-warning');
                 } else {
                     htmlElement.setAttribute('data-bs-theme', 'light');
-                    toggleBtn.innerHTML = "🌙 Mode Sombre";
+                    toggleBtn.innerHTML = "🌙 Mode Nuit";
                     toggleBtn
                         .classList
                         .replace('btn-outline-warning', 'btn-outline-light');
