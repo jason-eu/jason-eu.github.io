@@ -1,16 +1,40 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
     <head>
-        <title>Debian Master List - Jason</title>
+
         <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+       
+               <title>Debian Master List - Jason</title>
+       
+       
+            <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet">
         <style>
-            .command-name { color: #d63384; font-weight: bold; }
-            .parameter { color: #0d6efd; font-style: italic; }
-            .card { transition: transform 0.2s; border: none !important; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); }
-            .card:hover { transform: translateY(-5px); box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); }
-            .list-group-item { border-left: none; border-right: none; }
+            .command-name {
+                color: #d63384;
+                font-weight: bold;
+            }
+            .parameter {
+                color: #0d6efd;
+                font-style: italic;
+            }
+            .card {
+                transition: transform 0.2s;
+                border: none !important;
+                box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            }
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            }
+            .list-group-item {
+                border-left: none;
+                border-right: none;
+            }
         </style>
     </head>
 
@@ -21,9 +45,18 @@
                     <a class="navbar-brand font-monospace" href="#">user@debian:~$</a>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-auto">
-                            <li class="nav-item"><a class="nav-link" href="https://jason-eu.github.io/">Portfolio</a></li>
-                            <li class="nav-item"><a class="nav-link active" href="#">SISR fiche</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">SLAM fiche</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://jason-eu.github.io/">Portfolio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">SISR fiche</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">SLAM fiche</a>
+                            </li>
+                            <li class="nav-item ms-lg-3">
+                                <button class="btn btn-outline-light btn-sm" id="darkModeToggle">🌙 Mode Nuit</button>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -41,26 +74,51 @@
                     <div class="col-md-8">
                         <div class="input-group input-group-lg shadow-sm">
                             <span class="input-group-text bg-white border-end-0">🔍</span>
-                            <input type="text" id="commandSearch" class="form-control border-start-0 ps-0" placeholder="Search for 'ssh', 'partition', 'owner'...">
+                            <input
+                                type="text"
+                                id="commandSearch"
+                                class="form-control border-start-0 ps-0"
+                                placeholder="Search for 'ssh', 'partition', 'owner'...">
                         </div>
                         <div id="searchCount" class="text-muted mt-2 ps-2" style="display: none;"></div>
                     </div>
                 </div>
 
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="commandGrid">
-                    
+
                     <div class="col command-card">
                         <div class="card h-100">
                             <div class="card-header bg-primary text-white fw-bold">📖 Shell Basics & Docs</div>
                             <div class="card-body p-0">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><code class="command-name">man</code> <small class="text-muted">Detailed manual</small></li>
-                                    <li class="list-group-item"><code class="command-name">whoami</code> <small class="text-muted">Current user</small></li>
-                                    <li class="list-group-item"><code class="command-name">id</code> <small class="text-muted">User/Group IDs</small></li>
-                                    <li class="list-group-item"><code class="command-name">hostname</code> <small class="text-muted">Machine name</small></li>
-                                    <li class="list-group-item"><code class="command-name">pwd</code> <small class="text-muted">Current path</small></li>
-                                    <li class="list-group-item"><code class="command-name">clear / exit</code> <small class="text-muted">Clean/Close</small></li>
-                                    <li class="list-group-item"><code class="command-name">sudo</code> <small class="text-muted">Root privileges</small></li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">man</code>
+                                        <small class="text-muted">Detailed manual</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">whoami</code>
+                                        <small class="text-muted">Current user</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">id</code>
+                                        <small class="text-muted">User/Group IDs</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">hostname</code>
+                                        <small class="text-muted">Machine name</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">pwd</code>
+                                        <small class="text-muted">Current path</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">clear / exit</code>
+                                        <small class="text-muted">Clean/Close</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">sudo</code>
+                                        <small class="text-muted">Root privileges</small>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -71,15 +129,47 @@
                             <div class="card-header bg-secondary text-white fw-bold">📂 Files & Navigation</div>
                             <div class="card-body p-0">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><code class="command-name">ls</code> <span class="parameter">-l -a</span> <small class="text-muted">List files</small></li>
-                                    <li class="list-group-item"><code class="command-name">cd</code> <small class="text-muted">Change directory</small></li>
-                                    <li class="list-group-item"><code class="command-name">mkdir</code> <span class="parameter">-p</span> <small class="text-muted">Create folders</small></li>
-                                    <li class="list-group-item"><code class="command-name">rmdir</code> <small class="text-muted">Remove empty dir</small></li>
-                                    <li class="list-group-item"><code class="command-name">touch / file</code> <small class="text-muted">Create/Type check</small></li>
-                                    <li class="list-group-item"><code class="command-name">cp / mv</code> <span class="parameter">-r</span> <small class="text-muted">Copy/Move</small></li>
-                                    <li class="list-group-item"><code class="command-name">rm</code> <span class="parameter">-r</span> <small class="text-muted">Delete files/dirs</small></li>
-                                    <li class="list-group-item"><code class="command-name">find</code> <span class="parameter">-name</span> <small class="text-muted">System search</small></li>
-                                    <li class="list-group-item"><code class="command-name">vim / nano</code> <small class="text-muted">Text editors</small></li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">ls</code>
+                                        <span class="parameter">-l -a</span>
+                                        <small class="text-muted">List files</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">cd</code>
+                                        <small class="text-muted">Change directory</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">mkdir</code>
+                                        <span class="parameter">-p</span>
+                                        <small class="text-muted">Create folders</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">rmdir</code>
+                                        <small class="text-muted">Remove empty dir</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">touch / file</code>
+                                        <small class="text-muted">Create/Type check</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">cp / mv</code>
+                                        <span class="parameter">-r</span>
+                                        <small class="text-muted">Copy/Move</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">rm</code>
+                                        <span class="parameter">-r</span>
+                                        <small class="text-muted">Delete files/dirs</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">find</code>
+                                        <span class="parameter">-name</span>
+                                        <small class="text-muted">System search</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">vim / nano</code>
+                                        <small class="text-muted">Text editors</small>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -90,12 +180,31 @@
                             <div class="card-header bg-warning text-dark fw-bold">📝 Text & Flux</div>
                             <div class="card-body p-0">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><code class="command-name">cat / less / more</code> <small class="text-muted">View content</small></li>
-                                    <li class="list-group-item"><code class="command-name">head / tail</code> <small class="text-muted">Start/End of file</small></li>
-                                    <li class="list-group-item"><code class="command-name">grep</code> <small class="text-muted">Pattern search</small></li>
-                                    <li class="list-group-item"><code class="command-name">wc</code> <span class="parameter">-l</span> <small class="text-muted">Word/Line count</small></li>
-                                    <li class="list-group-item"><code class="command-name">cut / sort / uniq</code> <small class="text-muted">Data filtering</small></li>
-                                    <li class="list-group-item"><code class="command-name">echo</code> <small class="text-muted">Print text</small></li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">cat / less / more</code>
+                                        <small class="text-muted">View content</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">head / tail</code>
+                                        <small class="text-muted">Start/End of file</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">grep</code>
+                                        <small class="text-muted">Pattern search</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">wc</code>
+                                        <span class="parameter">-l</span>
+                                        <small class="text-muted">Word/Line count</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">cut / sort / uniq</code>
+                                        <small class="text-muted">Data filtering</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">echo</code>
+                                        <small class="text-muted">Print text</small>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -106,12 +215,31 @@
                             <div class="card-header bg-danger text-white fw-bold">🔒 Admin & Packages</div>
                             <div class="card-body p-0">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><code class="command-name">chmod / chown</code> <small class="text-muted">Perms/Owner</small></li>
-                                    <li class="list-group-item"><code class="command-name">apt</code> <small class="text-muted">Package manager</small></li>
-                                    <li class="list-group-item"><code class="command-name">dpkg</code> <span class="parameter">-i</span> <small class="text-muted">Install .deb</small></li>
-                                    <li class="list-group-item"><code class="command-name">systemctl / service</code> <small class="text-muted">Services</small></li>
-                                    <li class="list-group-item"><code class="command-name">adduser</code> <small class="text-muted">Create user</small></li>
-                                    <li class="list-group-item"><code class="command-name">google-authenticator</code> <small class="text-muted">2FA setup</small></li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">chmod / chown</code>
+                                        <small class="text-muted">Perms/Owner</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">apt</code>
+                                        <small class="text-muted">Package manager</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">dpkg</code>
+                                        <span class="parameter">-i</span>
+                                        <small class="text-muted">Install .deb</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">systemctl / service</code>
+                                        <small class="text-muted">Services</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">adduser</code>
+                                        <small class="text-muted">Create user</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">google-authenticator</code>
+                                        <small class="text-muted">2FA setup</small>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -122,12 +250,30 @@
                             <div class="card-header bg-success text-white fw-bold">🌐 SSH & Networking</div>
                             <div class="card-body p-0">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><code class="command-name">ssh / sftp</code> <small class="text-muted">Remote access</small></li>
-                                    <li class="list-group-item"><code class="command-name">ssh-keygen / ssh-copy-id</code> <small class="text-muted">Key management</small></li>
-                                    <li class="list-group-item"><code class="command-name">ssh-agent / ssh-add</code> <small class="text-muted">Key helpers</small></li>
-                                    <li class="list-group-item"><code class="command-name">scp / ssh-keyscan</code> <small class="text-muted">Copy/Scan</small></li>
-                                    <li class="list-group-item"><code class="command-name">ip a / netstat</code> <small class="text-muted">Interfaces</small></li>
-                                    <li class="list-group-item"><code class="command-name">ping / ntpdate</code> <small class="text-muted">Test/Time Sync</small></li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">ssh / sftp</code>
+                                        <small class="text-muted">Remote access</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">ssh-keygen / ssh-copy-id</code>
+                                        <small class="text-muted">Key management</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">ssh-agent / ssh-add</code>
+                                        <small class="text-muted">Key helpers</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">scp / ssh-keyscan</code>
+                                        <small class="text-muted">Copy/Scan</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">ip a / netstat</code>
+                                        <small class="text-muted">Interfaces</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">ping / ntpdate</code>
+                                        <small class="text-muted">Test/Time Sync</small>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -138,13 +284,35 @@
                             <div class="card-header bg-dark text-white fw-bold">💾 Disk Management</div>
                             <div class="card-body p-0">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><code class="command-name">fdisk</code> <span class="parameter">-l</span> <small class="text-muted">Partitions</small></li>
-                                    <li class="list-group-item"><code class="command-name">parted</code> <small class="text-muted">GPT tool</small></li>
-                                    <li class="list-group-item"><code class="command-name">df -h / du -sh</code> <small class="text-muted">Disk usage</small></li>
-                                    <li class="list-group-item"><code class="command-name">lsblk / blkid</code> <small class="text-muted">Block IDs</small></li>
-                                    <li class="list-group-item"><code class="command-name">mount / umount</code> <small class="text-muted">Filesystems</small></li>
-                                    <li class="list-group-item"><code class="command-name">mkfs.ext4 / fsck</code> <small class="text-muted">Format/Repair</small></li>
-                                    <li class="list-group-item"><code class="command-name">swapon --show / lshw</code> <small class="text-muted">Swap/Hardware</small></li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">fdisk</code>
+                                        <span class="parameter">-l</span>
+                                        <small class="text-muted">Partitions</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">parted</code>
+                                        <small class="text-muted">GPT tool</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">df -h / du -sh</code>
+                                        <small class="text-muted">Disk usage</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">lsblk / blkid</code>
+                                        <small class="text-muted">Block IDs</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">mount / umount</code>
+                                        <small class="text-muted">Filesystems</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">mkfs.ext4 / fsck</code>
+                                        <small class="text-muted">Format/Repair</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <code class="command-name">swapon --show / lshw</code>
+                                        <small class="text-muted">Swap/Hardware</small>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -158,13 +326,36 @@
                             <div class="table-responsive">
                                 <table class="table table-hover align-middle">
                                     <thead class="table-light">
-                                        <tr><th>PowerShell Command</th><th>Description</th></tr>
+                                        <tr>
+                                            <th>PowerShell Command</th>
+                                            <th>Description</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
-                                        <tr><td><code>Get-WindowsCapability -Online | ? Name -like 'OpenSSH*'</code></td><td>Check status</td></tr>
-                                        <tr><td><code>Add-WindowsCapability -Online -Name 'OpenSSH.Server~~~~0.0.1.0'</code></td><td>Install Server</td></tr>
-                                        <tr><td><code>Start-Service sshd; Set-Service sshd -StartupType 'Automatic'</code></td><td>Enable SSH</td></tr>
-                                        <tr><td><code>New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH' -Enabled True</code></td><td>Open Port 22</td></tr>
+                                        <tr>
+                                            <td>
+                                                <code>Get-WindowsCapability -Online | ? Name -like 'OpenSSH*'</code>
+                                            </td>
+                                            <td>Check status</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <code>Add-WindowsCapability -Online -Name 'OpenSSH.Server~~~~0.0.1.0'</code>
+                                            </td>
+                                            <td>Install Server</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <code>Start-Service sshd; Set-Service sshd -StartupType 'Automatic'</code>
+                                            </td>
+                                            <td>Enable SSH</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <code>New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH' -Enabled True</code>
+                                            </td>
+                                            <td>Open Port 22</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -179,12 +370,49 @@
         </footer>
 
         <script>
+            const toggleBtn = document.getElementById('darkModeToggle');
+            const htmlElement = document.documentElement;
+
+            toggleBtn.addEventListener('click', () => {
+                if (htmlElement.getAttribute('data-bs-theme') === 'light') {
+                    htmlElement.setAttribute('data-bs-theme', 'dark');
+                    toggleBtn.innerHTML = "☀️ Mode  Jour";
+                    toggleBtn
+                        .classList
+                        .replace('btn-outline-light', 'btn-outline-warning');
+                } else {
+                    htmlElement.setAttribute('data-bs-theme', 'light');
+                    toggleBtn.innerHTML = "🌙 Mode Nuit";
+                    toggleBtn
+                        .classList
+                        .replace('btn-outline-warning', 'btn-outline-light');
+                }
+            });
+
+            let mybutton = document.getElementById("btn-back-to-top");
+            window.onscroll = function () {
+                if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            };
+            mybutton.addEventListener("click", () => {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+        </script>
+
+        <script>
+
             const searchInput = document.getElementById('commandSearch');
             const commandCards = document.querySelectorAll('.command-card');
             const searchCountDisplay = document.getElementById('searchCount');
 
-            searchInput.addEventListener('input', function(e) {
-                const term = e.target.value.toLowerCase();
+            searchInput.addEventListener('input', function (e) {
+                const term = e
+                    .target
+                    .value
+                    .toLowerCase();
                 let totalMatches = 0;
 
                 commandCards.forEach(card => {
@@ -192,7 +420,9 @@
                     let cardHasMatch = false;
 
                     items.forEach(item => {
-                        const text = item.textContent.toLowerCase();
+                        const text = item
+                            .textContent
+                            .toLowerCase();
                         if (text.includes(term)) {
                             item.style.display = 'block';
                             cardHasMatch = true;
@@ -201,7 +431,9 @@
                             item.style.display = 'none';
                         }
                     });
-                    card.style.display = cardHasMatch ? 'block' : 'none';
+                    card.style.display = cardHasMatch
+                        ? 'block'
+                        : 'none';
                 });
 
                 if (term.length > 0) {
@@ -212,5 +444,6 @@
                 }
             });
         </script>
+
     </body>
 </html>
