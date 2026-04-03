@@ -6,13 +6,16 @@
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-       
-               <title>Debian Master List - Jason</title>
-       
-       
-            <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet">
+
+        <title>Debian Master List - Jason</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+        </style>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous">
         <style>
             .command-name {
                 color: #d63384;
@@ -49,10 +52,10 @@
                                 <a class="nav-link" href="https://jason-eu.github.io/">Portfolio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">SISR fiche</a>
+                                <a class="nav-link active" href="cheatsheet-SISR.html">SISR fiche</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">SLAM fiche</a>
+                                <a class="nav-link" href="cheatsheet-SLAM-DRAFT.html">SLAM fiche</a>
                             </li>
                             <li class="nav-item ms-lg-3">
                                 <button class="btn btn-outline-light btn-sm" id="darkModeToggle">🌙 Mode Nuit</button>
@@ -369,6 +372,16 @@
             <p>&copy; 2026 Jason - BTS SIO IRIS student. Powered by Debian 13.</p>
         </footer>
 
+        <button
+            type="button"
+            class="btn btn-primary btn-floating shadow"
+            id="btn-back-to-top">↑</button>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+
         <script>
             const toggleBtn = document.getElementById('darkModeToggle');
             const htmlElement = document.documentElement;
@@ -400,9 +413,7 @@
             mybutton.addEventListener("click", () => {
                 window.scrollTo({top: 0, behavior: 'smooth'});
             });
-        </script>
 
-        <script>
 
             const searchInput = document.getElementById('commandSearch');
             const commandCards = document.querySelectorAll('.command-card');
